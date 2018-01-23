@@ -86,7 +86,7 @@ async function captureAndSave (page, route, options, callback) {
   page
     .content()
     .then(async c => {
-      let content = await addPrefetchLinks(page, c)
+      let content = c
       if (options.postProcess) {
         content = options.postProcess(content)
       }
