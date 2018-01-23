@@ -143,6 +143,10 @@ module.exports = {
 
     try {
       const page = await options.browser.newPage()
+      if (options.defaultNavigationTimeout !== undefined) {
+        page.setDefaultNavigationTimeout(options.defaultNavigationTimeout)
+      }
+
       await blockResources(page)
 
       if (options.capture.event) {
